@@ -18,8 +18,8 @@ class ExampleCompTree extends ComputationTree {
     return Screen(
       // This node performs a computation
       input: ComputationNode(
-        function: (int x) => x * 3, // this is the function used for computation
-        input: ValueSourceNode(10), // this is the root value
+        function: (int x) => x * 2, // this is the function used for computation
+        input: ValueSourceNode(11), // this is the root value
       ),
     );
   }

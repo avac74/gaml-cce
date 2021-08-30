@@ -11,6 +11,8 @@ The long term goal of Gaml is to provide the following set of modules:
 
 ## The Core Computation Engine
 
+![Demo](./demo.gif)
+
 ### Purpose
 
 The Core Computation Engine (CCE) implements a computation pipeline. Its purpose is to provide tools for interactive development by taking advantage of some of Dart's builtin features, in particular, the *hot reload* feature.
