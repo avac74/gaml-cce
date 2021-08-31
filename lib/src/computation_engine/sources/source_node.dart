@@ -9,6 +9,6 @@ class SourceNode<T> extends Node<T> {
   @override
   NodeValue<T> pullAndReturn() {
     throw UnimplementedError(
-        'You must implement the `propagate` method for SourceNode');
+        'You must implement the `pullAndReturn` method for SourceNode');
   }
 }
