@@ -14,7 +14,7 @@ class ComputationNode<S, T> extends Node<T> {
   /// Creates a new [ComputationNode]
   ComputationNode({
     /// The transformation function S -> T
-    required T Function(S) function,
+    required T Function(S x) function,
 
     /// The input [Node]
     required this.input,
