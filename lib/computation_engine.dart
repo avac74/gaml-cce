@@ -8,7 +8,7 @@ export 'src/computation_engine/nodes/node_value.dart';
 export 'src/computation_engine/nodes/node.dart';
 export 'src/computation_engine/nodes/terminal_node.dart';
 
-export 'src/computation_engine/sinks/screen.dart';
+export 'src/computation_engine/sinks/screen_sink_node.dart';
 export 'src/computation_engine/sinks/sink_node.dart';
 
 export 'src/computation_engine/sources/source_node.dart';

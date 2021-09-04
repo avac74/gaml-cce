@@ -5,12 +5,12 @@ import '../../computation_engine/nodes/terminal_node.dart';
 import 'sink_node.dart';
 
 /// A [SinkNode] that dumps the content of data with type T to the screen
-class Screen<T> extends SinkNode<T> {
-  Screen({required Node<T> input}) : super(input: input);
+class ScreenSinkNode<T> extends SinkNode<T> {
+  ScreenSinkNode({required Node<T> input}) : super(input: input);
 
   @override
-  NodeValue<TerminalNode> pullAndReturn() {
-    print(input.pullAndReturn());
+  NodeValue<TerminalNode> recompute() {
+    print(input.recompute());
     return NodeValue(TerminalNode());
   }
 }

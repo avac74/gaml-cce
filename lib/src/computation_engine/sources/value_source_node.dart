@@ -10,7 +10,7 @@ class ValueSourceNode<T> extends SourceNode<T> {
   ) : _value = value;
 
   @override
-  NodeValue<T> pullAndReturn() {
+  NodeValue<T> recompute() {
     return NodeValue(_value);
   }
 }

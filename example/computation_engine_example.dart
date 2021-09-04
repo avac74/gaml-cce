@@ -15,11 +15,11 @@ class ExampleCompTree extends ComputationTree {
   @override
   Node build() {
     // This node outputs things to the screen
-    return Screen(
+    return ScreenSinkNode(
       // This node performs a computation
       input: ComputationNode(
         function: (int x) => x * 2, // this is the function used for computation
-        input: ValueSourceNode(11), // this is the root value
+        parent: ValueSourceNode(21), // this is the root value
       ),
     );
   }

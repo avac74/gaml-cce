@@ -3,10 +3,10 @@ import '../nodes/node_value.dart';
 
 /// A [Node] in the ComputationEngine tree
 ///
-/// It transforms an [input] of type S into an output of type T
+/// It transforms a [parent] of type S into an output of type T
 class ComputationNode<S, T> extends Node<T> {
   /// A [Node] of type S that provides the input data for this node
-  final Node<S> input;
+  final Node<S> parent;
 
   /// A [Function] that transforms an input of type S into an output of type T
   final T Function(S) f;
@@ -17,13 +17,13 @@ class ComputationNode<S, T> extends Node<T> {
     required T Function(S x) function,
 
     /// The input [Node]
-    required this.input,
+    required this.parent,
   }) : f = function;
 
-  /// Pull the value of type S from the [input] node and returns the output
+  /// Pull the value of type S from the [parent] node and returns the output
   /// of type T
   @override
-  NodeValue<T> pullAndReturn() {
-    return input.recompute().map(f);
+  NodeValue<T> recompute() {
+    return parent.recompute().map(f);
   }
 }

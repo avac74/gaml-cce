@@ -6,23 +6,22 @@ void main() {
   group('Node:', () {
     test('Check that ValueSourceNode propagates properly for different types',
         () {
-      expect(ValueSourceNode(10).pullAndReturn(), NodeValue(10));
-      expect(ValueSourceNode(true).pullAndReturn(), NodeValue(true));
-      expect(
-          ValueSourceNode('A String').pullAndReturn(), NodeValue('A String'));
+      expect(ValueSourceNode(10).recompute(), NodeValue(10));
+      expect(ValueSourceNode(true).recompute(), NodeValue(true));
+      expect(ValueSourceNode('A String').recompute(), NodeValue('A String'));
     });
 
     test('Check that the identity node returns the correct value', () {
       expect(
-        Identity(input: ValueSourceNode(10)).pullAndReturn(),
+        Identity(input: ValueSourceNode(10)).recompute(),
         NodeValue(10),
       );
       expect(
-        Identity(input: ValueSourceNode(true)).pullAndReturn(),
+        Identity(input: ValueSourceNode(true)).recompute(),
         NodeValue(true),
       );
       expect(
-        Identity(input: ValueSourceNode('A string')).pullAndReturn(),
+        Identity(input: ValueSourceNode('A string')).recompute(),
         NodeValue('A string'),
       );
     });
@@ -32,8 +31,8 @@ void main() {
       expect(
           ComputationNode(
             function: (int x) => x + 1,
-            input: ValueSourceNode(10),
-          ).pullAndReturn(),
+            parent: ValueSourceNode(10),
+          ).recompute(),
           NodeValue(11));
     });
 

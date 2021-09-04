@@ -11,7 +11,7 @@ class Identity<S> extends ComputationNode<S, S> {
     /// The input [Node]
     required Node<S> input,
   }) : super(
-          input: input,
+          parent: input,
           function: (x) => x,
         );
 }

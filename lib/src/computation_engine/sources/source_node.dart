@@ -7,7 +7,7 @@ import '../../computation_engine/nodes/node_value.dart';
 /// a computation from a variable of type T
 class SourceNode<T> extends Node<T> {
   @override
-  NodeValue<T> pullAndReturn() {
+  NodeValue<T> recompute() {
     throw UnimplementedError(
         'You must implement the `pullAndReturn` method for SourceNode');
   }

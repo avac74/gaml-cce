@@ -13,7 +13,7 @@ import 'node_value.dart';
 class TerminalNode extends Node {
   @override
   @nonVirtual
-  NodeValue pullAndReturn() {
+  NodeValue recompute() {
     throw SinkNodeCannotCollectException(
         'Trying to collect from a terminal node, maybe you used it as a child of another node?');
   }
