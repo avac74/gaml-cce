@@ -16,6 +16,6 @@ class SinkNode<T> extends Node<TerminalNode> {
   @override
   NodeValue<TerminalNode> recompute() {
     throw UnimplementedError(
-        'You must implement the `pullAndReturn` method in SinkNode');
+        'You must implement the `recompute` method in SinkNode');
   }
 }

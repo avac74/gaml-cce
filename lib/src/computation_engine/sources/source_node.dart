@@ -9,6 +9,6 @@ class SourceNode<T> extends Node<T> {
   @override
   NodeValue<T> recompute() {
     throw UnimplementedError(
-        'You must implement the `pullAndReturn` method for SourceNode');
+        'You must implement the `recompute` method for SourceNode');
   }
 }
